@@ -1,0 +1,19 @@
+.btn{
+    display: inline-flex;
+    height: 3.75rem;
+    padding: 0rem 1.25rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    flex-shrink: 0;
+    background: #BDBDBD;    
+
+    &.sm{
+        background: var(--color-primary);
+    }
+
+    &.lg{
+        border-radius: 0.5rem;
+        background: var(--color-primary);
+    }
+}

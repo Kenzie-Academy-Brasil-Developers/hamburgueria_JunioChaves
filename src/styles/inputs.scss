@@ -1,0 +1,15 @@
+.inputs{
+    display: inline-flex;
+    height: 3.75rem;
+    padding: 0rem 0.625rem 0rem 1.25rem;
+    justify-content: center;
+    align-items: center;
+    gap: 5.9375rem;
+    flex-shrink: 0;
+
+    &.color{
+        border-radius: 0.5rem;
+        border: 2px solid var(--color-grey-600, #333);
+        background: var(--color-grey-0);
+    }
+}
