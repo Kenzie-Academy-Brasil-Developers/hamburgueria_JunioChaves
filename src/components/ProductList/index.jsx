@@ -1,11 +1,9 @@
-import { useState } from "react";
-import { ProductCard } from "./ProductCard";
-
-// Produtos da lista do carrinho
+import { ProductCard } from "../ProductCard";
+import style from "./style.module.scss"
 export const ProductList = ({ addToCart, resultSearch }) => {
   return (
      <div>
-           <ul>
+           <ul className={style.container}>
               {resultSearch.map((product) => (
                  <ProductCard
                     key={product.id}

@@ -1,33 +1,69 @@
 import { MdClose } from "react-icons/md";
-import { CartItemCard } from "./CartItemCard";
+import { CartItemCard } from "../CartItemCard";
+import style from "./style.module.scss";
 
-export const CartModal = ({ cartList }) => {
-   const total = cartList.reduce((prevValue, product) => {
-      return prevValue + product.price;
-   }, 0);
+export const CartModal = ({
+  cartList,
+  children,
+  setIsOpen,
+  removeFromCart,
+  product,
+}) => {
+  const total = cartList.reduce((prevValue, product) => {
+    return prevValue + product.price;
+  }, 0);
 
-   return (
-      <div role="dialog">
-         <div>
-            <h2>Carrinho de compras</h2>
-            <button aria-label="close" title="Fechar">
-               <MdClose size={21} />
-            </button>
-         </div>
-         <div>
-            <ul>
-               {cartList.map((product) => (
-                  <CartItemCard key={product.id} product={product} />
-               ))}
-            </ul>
-         </div>
-         <div>
-            <div>
-               <span>Total</span>
-               <span>{total.toLocaleString('pt-BR', { style: "currency", currency: "BRL"})}</span>
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
+  return (
+    <div className={style.modal} role="dialog">
+      <div className={style.container}>
+        <div className={style.boxTitle}>
+          <h2 className={style.h2}>Carrinho de compras</h2>
+          <button
+            className={style.close}
+            onClick={() => closeModal()}
+            aria-label="close"
+            title="Fechar"
+          >
+            {children}
+            <MdClose size={21} />
+          </button>
+        </div>
+        <div className={style.box}>
+          <ul className={style.ul}>
+            {cartList.map((product) => (
+              <CartItemCard
+                key={product.id}
+                product={product}
+                removeFromCart={removeFromCart}
+              />
+            ))}
+          </ul>
+            <div className={style.div}>
+              <span className={style.line}></span>
+              <div >
+                <span className={style.total} >Total</span>
+                <span>
+                  {total.toLocaleString("pt-BR", {
+                    style: "currency",
+                    currency: "BRL",
+                  })}
+                </span>
+              </div>
+              <div className={style.remove}>
+                <button
+                  onClick={() => removeFromCart(product)}
+                  className="btn lg"
+                >
+                  Remover todos
+                </button>
+              </div>
             </div>
-            <button>Remover todos</button>
-         </div>
+        </div>
       </div>
-   );
+    </div>
+  );
 };

@@ -1,0 +1,88 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    min-width: 300px;
+    max-width: 300px;
+    border-radius: 5px;
+    border: 2px solid var(--color-grey-100);
+
+    &:hover{
+        transition-delay: .2s;
+        border: 2px solid var(--color-primary);
+    }
+
+    img{
+        width: 10rem;
+        height: 10rem;
+        margin-bottom: 1.5625rem;
+    }   
+
+    .img {
+        width: 100%;
+        margin-left: 0.125rem;
+        max-height: 9.375rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--color-grey-0);
+    }
+
+    .box{
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        width: 18.75rem;
+        height: 12.25rem;
+        padding: 1.25rem;
+        align-items: flex-start;
+        gap: 0.625rem;
+        flex-shrink: 0;
+    }
+
+    .h3{
+        display: flex;
+        width: 16.25rem;
+        height: 2.5rem;
+        padding-top: 6.667px;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .category{
+        display: flex;
+        width: 16.25rem;
+        height: 1.25rem;
+        padding-bottom: 0px;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .price{
+        display: flex;
+        width: 16.25rem;
+        height: 1.125rem;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .button{
+        display: inline-flex;
+        height: 2.5rem;
+        padding: 0rem 1.25rem;
+        justify-content: center;
+        align-items: center;
+        gap: 0.625rem;
+        flex-shrink: 0;
+        border-radius: 0.5rem;
+        color: var(--color-write);
+        border: 2px solid var(--color-grey-100);
+        background: var(--color-grey-100);
+    }
+
+    .button:hover{
+        border: 2px solid var(--color-primary);
+        background: var(--color-primary);
+    }
+}

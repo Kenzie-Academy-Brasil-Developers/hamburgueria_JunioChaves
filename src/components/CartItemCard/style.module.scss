@@ -1,0 +1,47 @@
+.boxDiv{
+    display: flex;
+    gap: 10px;
+    display: flex;
+    width: 370px;
+    height: 80px;
+    padding: 1.5px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    background-color: var(--color-write);
+}
+
+
+
+.box{
+    display: flex;
+    justify-content: space-between;
+    width: 23.125rem;
+    height: 3.34313rem;
+    flex-shrink: 0;
+    gap: 10px;
+    padding: 0.5rem;
+    background-color: var(--color-write);
+}
+
+.img{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 3.4375rem;
+    height: 3.34313rem;
+    flex-shrink: 0;
+
+    border-radius: 0.3125rem;
+    background: var(--color-grey-100);
+}
+
+.nome{
+    display: flex;
+    width: 13.13338rem;
+    height: 1.875rem;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    align-items: center;
+    flex-shrink: 0;
+}
