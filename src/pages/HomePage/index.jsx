@@ -16,8 +16,8 @@ export const HomePage = () => {
   const [loading, setLoading] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
 
-  const localCart = localStorage.getItem("@ProductsList");
-
+  const localCart = JSON.parse(localStorage.getItem("@ProductsList")) ;
+  
 
   useEffect(() => {
     const getHandleProducts = async () => {
@@ -40,7 +40,7 @@ export const HomePage = () => {
 
   useEffect(() => {
     if (cartList.length > 0) {
-      localStorage.setItem(localCart, JSON.stringify(cartList));
+      localStorage.setItem("@ProductsList", JSON.stringify(cartList));
     }
   }, [cartList]);
   const removeLocalStore = () => {
@@ -61,6 +61,11 @@ export const HomePage = () => {
     setCartList(newCartList);
     toast.success("O seu produto foi removido com sucesso do carrinho.");
   };
+
+  const removeAllCart = () => {
+    setCartList([])
+    toast.success("Todos os seus produto foram removidos com sucesso")
+  } 
 
   const resultSearch = productList.filter((product) =>
     product.name.toUpperCase().includes(value.toUpperCase())
@@ -86,7 +91,8 @@ export const HomePage = () => {
           <CartModal
             cartList={cartList}
             setIsOpen={setIsOpen}
-            removeFromCart={removeFromCart}
+            removeFromCart={removeFromCart} 
+            removeAllCart={removeAllCart}
           />
         ) : null}
 

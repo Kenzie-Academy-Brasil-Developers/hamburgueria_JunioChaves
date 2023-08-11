@@ -7,7 +7,7 @@ export const CartModal = ({
   children,
   setIsOpen,
   removeFromCart,
-  product,
+  removeAllCart,
 }) => {
   const total = cartList.reduce((prevValue, product) => {
     return prevValue + product.price;
@@ -44,8 +44,8 @@ export const CartModal = ({
           </ul>
             <div className={style.div}>
               <span className={style.line}></span>
-              <div >
-                <span className={style.total} >Total</span>
+              <div className={style.total}>
+                <span>Total</span>
                 <span>
                   {total.toLocaleString("pt-BR", {
                     style: "currency",
@@ -55,7 +55,7 @@ export const CartModal = ({
               </div>
               <div className={style.remove}>
                 <button
-                  onClick={() => removeFromCart(product)}
+                  onClick={removeAllCart}
                   className="btn lg"
                 >
                   Remover todos

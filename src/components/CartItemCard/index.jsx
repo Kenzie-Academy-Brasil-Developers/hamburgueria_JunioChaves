@@ -4,7 +4,7 @@ import style from "./style.module.scss"
 export const CartItemCard = ({ product, removeFromCart }) => {
    return (
       <div className={style.boxDiv}>
-         <li>
+         <li className={style.list}>
             <div className={style.box}>
             <div className={style.img}>
                <img src={product.img} alt={product.name} />
