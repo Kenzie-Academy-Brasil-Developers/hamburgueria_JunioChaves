@@ -1,4 +1,5 @@
-## Sobre a entrega
+Clique no link para visualizar o projeto
+https://hamburgueria-junio-chaves.vercel.app/
 
 O objetivo desta é implementar um conjunto de funcionalidades e estilização a projeto existente, colocando em prática os conhecimentos aprendidos até aqui.
 Iremos acessar a lista de produto desta API e simularemos um carrinho de compras com React.
